@@ -117,4 +117,41 @@ function addInventory() {
         })
     })
 }
+function addProduct() {
+    inquirer.prompt([
+        {
+            name: "prodName",
+            type: "input",
+            message: "Enter the name of the product: "
+        },
+        {
+            name: "department",
+            type: "input",
+            message: "Enter the department for the product:  "
+        },
+        {
+            name: "price",
+            type: "input",
+            message: "Enter the price of the prduct"
+        },
+        {
+            name: "stock",
+            type: "input",
+            message: "Enter the quantity on hand: "
+        }
+    ]).then(function (user) {
+        var newItem = {
+            product_name: user.prodName,
+            department_name: user.department,
+            price: user.price,
+            stock_quantity: user.stock
+        }
+        connection.query("INSERT INTO products SET ?", newItem,
+            function (err, results) {
+                if (err) throw err
+                console.log("Product added!")
+                loadMenu()
+            })
+    })
+}
 
