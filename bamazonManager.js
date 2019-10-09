@@ -72,7 +72,7 @@ function viewLowInventory() {
     })
 }
 function addInventory() {
-    connection.query("SELECT item_id, product_name, stock_quantity FROM products", function (err, results) {
+    /*connection.query("SELECT item_id, product_name, stock_quantity FROM products", function (err, results) {
         if (err) throw err
         console.log("------------------------------\n" +
             "Stock Quantities [ID, NAME, QUANTITY]\n" +
@@ -81,7 +81,7 @@ function addInventory() {
             var displayItem = "[" + results[i].item_id + "] [" + results[i].product_name + "] [" + results[i].stock_quantity +"]\n"
             console.log(displayItem)
         }
-    })
+    })*/
     inquirer.prompt([
         {
             name: "Id",
@@ -94,22 +94,27 @@ function addInventory() {
             message: "Enter number of units to add: "
 
         }
-    ]).then(function(user){
-        /*connection.query(
-            "UPDATE products SET ? WHERE ?",
-            [
-                {
-                    stock_quantity: + user.quantity
-                },
-                {
-                    item_id: user.Id
-                }
-            ],
-            function (error) {
-                if (error) throw err
-                console.log("Inventory Updated!\n")
-            })
-        })*/
-        loadMenu()
+    ]).then(function (user) {
+        connection.query("SELECT stock_quantity FROM products WHERE item_id=" + user.Id, function (err, results) {
+            if (err) throw err
+            var oldQuantity = parseInt(results[0].stock_quantity)
+            var newQuantity = oldQuantity + parseInt(user.quantity)
+            connection.query(
+                "UPDATE products SET ? WHERE ?",
+                [
+                    {
+                        stock_quantity: newQuantity
+                    },
+                    {
+                        item_id: user.Id
+                    }
+                ],
+                function (error) {
+                    if (error) throw error
+                    console.log("Inventory Updated!\n")
+                    loadMenu()
+                })
+        })
     })
 }
+
