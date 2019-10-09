@@ -127,12 +127,12 @@ function addProduct() {
         {
             name: "department",
             type: "input",
-            message: "Enter the department for the product:  "
+            message: "Enter the department for the product: "
         },
         {
             name: "price",
             type: "input",
-            message: "Enter the price of the prduct"
+            message: "Enter the price of the product:$ "
         },
         {
             name: "stock",
