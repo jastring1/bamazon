@@ -20,6 +20,7 @@ In this activity, you'll be creating an Amazon-like storefront with the MySQL sk
 
 1. SQL Files
   * schema.sql - contains the database and tables schemas to set up a MySQL Database, I have used MySql Worbench to achieve this.
+  ![schema image](/images/schema.jpg)
   * seeds.sql - contains the seeds to be added to the database to get this databse loaded with informations
   
 2. This application has two different programs that can be used 
