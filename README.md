@@ -20,9 +20,9 @@ In this activity, you'll be creating an Amazon-like storefront with the MySQL sk
 
 1. SQL Files
   * schema.sql - contains the database and tables schemas to set up a MySQL Database, I have used MySql Worbench to achieve this.
-  ![schema image](https://github.com/jastring1/bamazon/blob/master/images/schema.JPG)
+  * ![schema image](https://github.com/jastring1/bamazon/blob/master/images/schema.JPG)
   * seeds.sql - contains the seeds to be added to the database to get this databse loaded with informations
-  ![seeds image](https://github.com/jastring1/bamazon/blob/master/images/seeds.JPG)
+  * ![seeds image](https://github.com/jastring1/bamazon/blob/master/images/seeds.JPG)
   
 2. This application has two different programs that can be used 
   * bamazonCustomer.js
