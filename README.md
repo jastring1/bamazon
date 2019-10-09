@@ -64,5 +64,5 @@ In this activity, you'll be creating an Amazon-like storefront with the MySQL sk
     * ![inventory](https://github.com/jastring1/bamazon/blob/master/images/add_inventory.JPG)
  * Add Product
     * This function allows the user to add a new product to the databse by following a series of prompts
-    * ![addproduct](https://github.com/jastring1/bamazon/blob/master/images/add%product.JPG)
+    * ![addproduct](https://github.com/jastring1/bamazon/blob/master/images/add_product.JPG)
  3. Once a function has been completed, the user will be returned to the main menu where they may select another menu option, or exit the program.
